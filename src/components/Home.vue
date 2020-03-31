@@ -62,7 +62,6 @@ export default {
       input: {
         review: this.review
       },
-      review: this.review,
       response: "",
       isLoading: false
     };
