@@ -151,6 +151,8 @@ a {
 textarea {
   width: 50%;
   height: 70px;
+  border-radius: 25px;
+  padding: 10px;
 }
 
 div.intro {
@@ -174,8 +176,10 @@ div.results {
   width: 300px;
   height: 250px;
   margin: 10px;
-  border: 1px solid white;
+  border: 2px solid white;
   background-color: #722f37;
+  padding: 10px;
+  border-radius: 25px;
 }
 .middle {
   transition: 0.5s ease;
@@ -199,6 +203,9 @@ div.loading {
   overflow: auto; /* Enable scroll if needed */
   background-color: rgb(0, 0, 0); /* Fallback color */
   background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+}
+button {
+  border-radius: 25px;
 }
 
 .footer {
