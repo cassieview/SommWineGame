@@ -1,11 +1,12 @@
 import Vue from "vue";
 import App from "./App.vue";
-import { BootstrapVue, IconsPlugin } from "bootstrap-vue";
-// Install BootstrapVue
-Vue.use(BootstrapVue);
-// Optionally install the BootstrapVue icon components plugin
-Vue.use(IconsPlugin);
+
 Vue.config.productionTip = false;
+
+Vue.filter("toPercent", function(value) {
+  value = parseInt(parseFloat(value) * 100);
+  return value;
+});
 
 new Vue({
   render: h => h(App)

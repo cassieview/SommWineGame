@@ -1,6 +1,5 @@
 <template>
   <div class="Home">
-    <span class="container"></span>
     <h1>Somm Wine Game</h1>
     <div class="intro">
       <h2>
@@ -14,45 +13,41 @@
       placeholder="This fragrant, savory red carries aromas of underbrush, plum, blue flower, cocoa and camphor on the nose. The polished palate boasts juicy Marasca cherry, ripe blackberry, licorice, tobacco and an appealing hint of game. Silky tannins and bright acidity keep it balanced and elegant."
     ></textarea>
     <br />
-    <button v-on:click="sendData()">Submit</button>
+    <br />
+    <button v-on:click="sendData()" :disabled="isLoading == 1">Submit</button>
+    <div :class="{ loading: isLoading }">
+      <img
+        src="../assets/loading.gif"
+        v-if="isLoading"
+        height="200px"
+        width="200px"
+      />
+    </div>
     <br />
     <br />
     <div>
-      <span class="results">
-        <h3>Variety</h3>
-        <ul
-          id="example-2"
-          v-for="(index, item) in response.variety"
-          v-bind:key="index"
-        >
-          <li>{{ item }}: {{ index }}</li>
+      <div class="results">
+        <h3>Variety Scores</h3>
+        <ul v-for="(index, item) in response.variety" v-bind:key="index">
+          <li>{{ item }}: {{ index | toPercent }} %</li>
         </ul>
-      </span>
+      </div>
 
-      <span class="results">
-        <h3>Points</h3>
-        <ul
-          id="example-2"
-          v-for="(index, item) in response.points"
-          v-bind:key="index"
-        >
-          <li>Points {{ item }}: {{ index }}</li>
+      <div class="results">
+        <h3>Points Scores</h3>
+        <ul v-for="(index, item) in response.points" v-bind:key="index">
+          <li>Points {{ item }}: {{ index | toPercent }} %</li>
         </ul>
-      </span>
+      </div>
 
-      <span class="results">
-        <h3>Price</h3>
-        <ul
-          id="example-2"
-          v-for="(index, item) in response.price"
-          v-bind:key="index"
-        >
-          <li>Price {{ item }}: {{ index }}</li>
+      <div class="results">
+        <h3>Price Scores</h3>
+        <ul v-for="(index, item) in response.price" v-bind:key="index">
+          <li>Price {{ item }} USD: {{ index | toPercent }} %</li>
         </ul>
-      </span>
+      </div>
     </div>
   </div>
-  <!-- <input type="text" v-model="input.lastname" placeholder="Last Name" /> -->
 </template>
 
 <script>
@@ -61,21 +56,22 @@ const url =
   "https://ai-sommelier.azurewebsites.net/api/wine?code=OMwzdCHjCVPZlHG0oLlUZzZXap4n31YljUFvQtU3w1TvLpLTVQ6nCA==";
 export default {
   name: "Home",
-  props: {
-    review: String
-  },
+  props: {},
   data() {
     return {
       input: {
         review: this.review
       },
-      response: ""
+      review: this.review,
+      response: "",
+      isLoading: false
     };
   },
   methods: {
     sendData() {
       this.input.review = this.review;
       this.response = "";
+      this.isLoading = true;
       axios
         .post(url, this.input, {
           headers: {
@@ -86,9 +82,11 @@ export default {
         .then(
           result => {
             this.response = result.data;
+            this.isLoading = false;
           },
           error => {
             console.error(error);
+            this.isLoading = false;
           }
         );
     }
@@ -133,12 +131,35 @@ div.Home {
   margin: auto;
 }
 
-.results {
+div.results {
   display: inline-block;
   width: 300px;
   height: 250px;
   margin: 10px;
   border: 1px solid white;
   background-color: #722f37;
+}
+.middle {
+  transition: 0.5s ease;
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+div.loading {
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 25%; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0, 0, 0); /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
 }
 </style>
