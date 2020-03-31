@@ -28,7 +28,10 @@
       <div class="results">
         <h3>Variety Scores</h3>
         <ul v-for="(index, item) in response.variety" v-bind:key="index">
-          <li>{{ item }}: {{ index | toWineBottles }}</li>
+          <li>{{ item }}:</li>
+          <span v-for="index in toWineBottles(index)" :key="index"
+            ><i class="fas fa-wine-bottle"></i>
+          </span>
         </ul>
       </div>
 
@@ -37,13 +40,9 @@
         <ul v-for="(index, item) in response.points" v-bind:key="index">
           <li>
             Points {{ item }}:
-            <span>
-              <img
-                src="../assets/logo.png"
-                height="15"
-                width="25"
-                class="rotateimg90"
-            /></span>
+            <span v-for="index in toWineBottles(index)" :key="index"
+              ><i class="fas fa-wine-bottle"></i>
+            </span>
           </li>
         </ul>
       </div>
@@ -52,8 +51,10 @@
         <h3>Price Scores</h3>
         <ul v-for="(index, item) in response.price" v-bind:key="index">
           <li>
-            Price {{ item }}: {{ index | toWineBottles }}
-            <span><i class="fas fa-wine-bottle"></i></span>
+            Price {{ item }}:
+            <span v-for="index in toWineBottles(index)" :key="index"
+              ><i class="fas fa-wine-bottle"></i>
+            </span>
           </li>
         </ul>
       </div>
@@ -61,7 +62,7 @@
 
     <h3>
       Need help writing a wine description? Check out some examples at
-      <a href="https://winemag.com">winemag.com</a>
+      <a href="https://www.winemag.com/">winemag.com</a>
     </h3>
   </div>
 </template>
