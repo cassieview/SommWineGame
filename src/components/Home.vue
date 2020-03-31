@@ -15,12 +15,7 @@
     <br />
     <button v-on:click="sendData()" :disabled="isLoading == 1">Submit</button>
     <div :class="{ loading: isLoading }">
-      <img
-        src="../assets/loading.gif"
-        v-if="isLoading"
-        height="200px"
-        width="200px"
-      />
+      <img src="../assets/loading.gif" v-if="isLoading" height="200px" width="200px" />
     </div>
     <br />
     <br />
@@ -29,8 +24,8 @@
         <h3>Variety Scores</h3>
         <ul v-for="(index, item) in response.variety" v-bind:key="index">
           <li>{{ item }}:</li>
-          <span v-for="index in toWineBottles(index)" :key="index"
-            ><i class="fas fa-wine-bottle"></i>
+          <span v-for="index in toWineBottles(index)" :key="index">
+            <i class="fas fa-wine-bottle"></i>
           </span>
         </ul>
       </div>
@@ -40,8 +35,8 @@
         <ul v-for="(index, item) in response.points" v-bind:key="index">
           <li>
             Points {{ item }}:
-            <span v-for="index in toWineBottles(index)" :key="index"
-              ><i class="fas fa-wine-bottle"></i>
+            <span v-for="index in toWineBottles(index)" :key="index">
+              <i class="fas fa-wine-bottle"></i>
             </span>
           </li>
         </ul>
@@ -52,8 +47,8 @@
         <ul v-for="(index, item) in response.price" v-bind:key="index">
           <li>
             Price {{ item }}:
-            <span v-for="index in toWineBottles(index)" :key="index"
-              ><i class="fas fa-wine-bottle"></i>
+            <span v-for="index in toWineBottles(index)" :key="index">
+              <i class="fas fa-wine-bottle"></i>
             </span>
           </li>
         </ul>
@@ -63,23 +58,21 @@
     <div class="footer">
       <p>
         Need help writing a wine description? Check out some examples at
-        <a href="https://www.winemag.com/" target="_blank">winemag.com</a>
+        <a
+          href="https://www.winemag.com/"
+          target="_blank"
+        >winemag.com</a>
       </p>
       <p>
         Read about how the ml models were created
         <a
           href="https://dev.to/azure/grab-your-wine-it-s-time-to-demystify-ml-and-nlp-47f7"
           target="_blank"
-          >Dev.To Blog</a
-        >
+        >Dev.To Blog</a>
       </p>
+      <p>Read about how the ml models were deployed with onnx on April 17th!</p>
       <p>
-        Read about how the ml models were deployed with onnx on April 17th!
-      </p>
-      <p>
-        <a href="https://twitter.com/Cassieview" target="_blank"
-          >Follow me on twitter!</a
-        >
+        <a href="https://twitter.com/Cassieview" target="_blank">Follow me on twitter!</a>
       </p>
     </div>
   </div>
@@ -152,7 +145,7 @@ a {
 textarea {
   width: 50%;
   height: 70px;
-  border-radius: 25px;
+  border-radius: 12px;
   padding: 10px;
 }
 
