@@ -59,6 +59,7 @@
         </ul>
       </div>
     </div>
+    <div class="ineedspace"></div>
     <div class="footer">
       <p>
         Need help writing a wine description? Check out some examples at
@@ -216,5 +217,10 @@ button {
   background-color: black;
   color: white;
   text-align: center;
+  box-sizing: border-box;
+}
+
+.ineedspace {
+  padding: 50px;
 }
 </style>
