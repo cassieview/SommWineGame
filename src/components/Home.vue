@@ -4,8 +4,7 @@
     <div class="intro">
       <h2>
         Describe your wine like a sommelier! This site uses machine learning to
-        predict the Price, Points, and Variety based on the description
-        provided.
+        predict the price, points, and variety based on a description.
       </h2>
     </div>
     <textarea
@@ -29,21 +28,21 @@
       <div class="results">
         <h3>Variety Scores</h3>
         <ul v-for="(index, item) in response.variety" v-bind:key="index">
-          <li>{{ item }}: {{ index | toPercent }} %</li>
+          <li>{{ item }}: {{ index | toWineBottles }}</li>
         </ul>
       </div>
 
       <div class="results">
         <h3>Points Scores</h3>
         <ul v-for="(index, item) in response.points" v-bind:key="index">
-          <li>Points {{ item }}: {{ index | toPercent }} %</li>
+          <li>Points {{ item }}: {{ index | toWineBottles }}</li>
         </ul>
       </div>
 
       <div class="results">
         <h3>Price Scores</h3>
         <ul v-for="(index, item) in response.price" v-bind:key="index">
-          <li>Price {{ item }} USD: {{ index | toPercent }} %</li>
+          <li>Price {{ item }} USD: {{ index | toWineBottles }}</li>
         </ul>
       </div>
     </div>

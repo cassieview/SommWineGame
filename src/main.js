@@ -8,6 +8,11 @@ Vue.filter("toPercent", function(value) {
   return value;
 });
 
+Vue.filter("toWineBottles", function(value) {
+  value = parseFloat(value) / 0.2;
+  return value;
+});
+
 new Vue({
   render: h => h(App)
 }).$mount("#app");
