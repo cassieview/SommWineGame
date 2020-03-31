@@ -1,19 +1,19 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <img alt="App logo" src="./assets/logo.png" height="150" width="350" />
+    <Home />
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import Home from "./components/Home.vue";
 
 export default {
-  name: 'App',
+  name: "App",
   components: {
-    HelloWorld
+    Home
   }
-}
+};
 </script>
 
 <style>
@@ -22,7 +22,17 @@ export default {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+  color: white;
+  margin: 60px;
+}
+
+body {
+  background: 
+    /* top, transparent red, faked with gradient */ linear-gradient(
+      rgba(114, 47, 55, 0.9),
+      rgba(114, 47, 55, 0.9)
+    ),
+    /* bottom, image */ url("./assets/corkbackground.jpg");
+  background-size: 100%;
 }
 </style>
