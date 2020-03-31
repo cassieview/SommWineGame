@@ -59,11 +59,28 @@
         </ul>
       </div>
     </div>
-
-    <h3>
-      Need help writing a wine description? Check out some examples at
-      <a href="https://www.winemag.com/">winemag.com</a>
-    </h3>
+    <div class="footer">
+      <p>
+        Need help writing a wine description? Check out some examples at
+        <a href="https://www.winemag.com/" target="_blank">winemag.com</a>
+      </p>
+      <p>
+        Read about how the ml models were created
+        <a
+          href="https://dev.to/azure/grab-your-wine-it-s-time-to-demystify-ml-and-nlp-47f7"
+          target="_blank"
+          >Dev.To Blog</a
+        >
+      </p>
+      <p>
+        Read about how the ml models were deployed with onnx on April 17th!
+      </p>
+      <p>
+        <a href="https://twitter.com/Cassieview" target="_blank"
+          >Follow me on twitter!</a
+        >
+      </p>
+    </div>
   </div>
 </template>
 
@@ -133,7 +150,7 @@ a {
 }
 textarea {
   width: 50%;
-  height: 50px;
+  height: 70px;
 }
 
 div.intro {
@@ -184,11 +201,13 @@ div.loading {
   background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
 }
 
-.rotateimg90 {
-  -webkit-transform: rotate(90deg);
-  -moz-transform: rotate(90deg);
-  -ms-transform: rotate(90deg);
-  -o-transform: rotate(90deg);
-  transform: rotate(90deg);
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: black;
+  color: white;
+  text-align: center;
 }
 </style>
