@@ -9,7 +9,7 @@ Vue.filter("toPercent", function(value) {
 });
 
 Vue.filter("toWineBottles", function(value) {
-  value = parseFloat(value) / 0.2;
+  value = Math.ceil(parseFloat(value) / 0.2);
   return value;
 });
 
