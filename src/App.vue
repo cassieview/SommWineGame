@@ -29,8 +29,8 @@ export default {
 body {
   background: 
     /* top, transparent red, faked with gradient */ linear-gradient(
-      rgba(114, 47, 55, 0.9),
-      rgba(114, 47, 55, 0.9)
+      rgba(0, 0, 0, 0.9),
+      rgba(0, 0, 0, 0.9)
     ),
     /* bottom, image */ url("./assets/corkbackground.jpg");
   background-size: 100%;
