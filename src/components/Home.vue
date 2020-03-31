@@ -35,17 +35,34 @@
       <div class="results">
         <h3>Points Scores</h3>
         <ul v-for="(index, item) in response.points" v-bind:key="index">
-          <li>Points {{ item }}: {{ index | toWineBottles }}</li>
+          <li>
+            Points {{ item }}:
+            <span>
+              <img
+                src="../assets/logo.png"
+                height="15"
+                width="25"
+                class="rotateimg90"
+            /></span>
+          </li>
         </ul>
       </div>
 
       <div class="results">
         <h3>Price Scores</h3>
         <ul v-for="(index, item) in response.price" v-bind:key="index">
-          <li>Price {{ item }} USD: {{ index | toWineBottles }}</li>
+          <li>
+            Price {{ item }}: {{ index | toWineBottles }}
+            <span><i class="fas fa-wine-bottle"></i></span>
+          </li>
         </ul>
       </div>
     </div>
+
+    <h3>
+      Need help writing a wine description? Check out some examples at
+      <a href="https://winemag.com">winemag.com</a>
+    </h3>
   </div>
 </template>
 
@@ -62,6 +79,7 @@ export default {
         review: this.review
       },
       response: "",
+      review: "",
       isLoading: false
     };
   },
@@ -87,6 +105,10 @@ export default {
             this.isLoading = false;
           }
         );
+    },
+    toWineBottles(value) {
+      value = Math.ceil(parseFloat(value) / 0.2);
+      return value;
     }
   }
 };
@@ -159,5 +181,13 @@ div.loading {
   overflow: auto; /* Enable scroll if needed */
   background-color: rgb(0, 0, 0); /* Fallback color */
   background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+}
+
+.rotateimg90 {
+  -webkit-transform: rotate(90deg);
+  -moz-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  -o-transform: rotate(90deg);
+  transform: rotate(90deg);
 }
 </style>
