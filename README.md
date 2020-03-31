@@ -1,4 +1,4 @@
-# ai-wine-app
+# Somm Wine Game
 
 ## Project setup
 ```
