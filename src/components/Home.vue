@@ -167,7 +167,7 @@ div.Home {
 
 div.results {
   display: inline-block;
-  width: 300px;
+  width: 200px;
   height: 250px;
   margin: 10px;
   border: 2px solid white;
@@ -203,7 +203,6 @@ button {
 }
 
 .footer {
-  position: fixed;
   left: 0;
   bottom: 0;
   width: 100%;
