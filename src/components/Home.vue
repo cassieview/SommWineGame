@@ -22,36 +22,42 @@
     <div>
       <div class="results">
         <h3>Variety Scores</h3>
-        <ul v-for="(index, item) in response.variety" v-bind:key="index">
-          <li>{{ item }}:</li>
-          <span v-for="index in toWineBottles(index)" :key="index">
-            <i class="fas fa-wine-bottle"></i>
-          </span>
-        </ul>
+        <div class="list">
+          <ul v-for="(index, item) in response.variety" v-bind:key="index">
+            <li>{{ item }}:</li>
+            <span v-for="index in toWineBottles(index)" :key="index">
+              <i class="fas fa-wine-bottle"></i>
+            </span>
+          </ul>
+        </div>
       </div>
 
       <div class="results">
         <h3>Points Scores</h3>
-        <ul v-for="(index, item) in response.points" v-bind:key="index">
-          <li>
-            Points {{ item }}:
-            <span v-for="index in toWineBottles(index)" :key="index">
-              <i class="fas fa-wine-bottle"></i>
-            </span>
-          </li>
-        </ul>
+        <div class="list">
+          <ul v-for="(index, item) in response.points" v-bind:key="index">
+            <li>
+              Points {{ item }}:
+              <span v-for="index in toWineBottles(index)" :key="index">
+                <i class="fas fa-wine-bottle"></i>
+              </span>
+            </li>
+          </ul>
+        </div>
       </div>
 
       <div class="results">
         <h3>Price Scores</h3>
-        <ul v-for="(index, item) in response.price" v-bind:key="index">
-          <li>
-            Price {{ item }}:
-            <span v-for="index in toWineBottles(index)" :key="index">
-              <i class="fas fa-wine-bottle"></i>
-            </span>
-          </li>
-        </ul>
+        <div class="list">
+          <ul v-for="(index, item) in response.price" v-bind:key="index">
+            <li>
+              Price {{ item }}:
+              <span v-for="index in toWineBottles(index)" :key="index">
+                <i class="fas fa-wine-bottle"></i>
+              </span>
+            </li>
+          </ul>
+        </div>
       </div>
     </div>
     <div class="ineedspace"></div>
@@ -226,7 +232,10 @@ button {
   box-sizing: border-box;
   font-family: Calibri;
 }
-
+.list {
+  text-align: left;
+  padding: 5px;
+}
 .ineedspace {
   padding: 50px;
 }
