@@ -4,7 +4,7 @@
     <div class="intro">
       <p>
         Describe your wine like a sommelier! This site uses machine learning to
-        predict the price, points, and variety based on a description.
+        predict the price, points, and variety based on a description. The better your description is the more accurate the predictions!
       </p>
     </div>
     <textarea
