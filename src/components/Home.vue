@@ -2,10 +2,10 @@
   <div class="Home">
     <h1>Somm Wine Game</h1>
     <div class="intro">
-      <h2>
+      <p>
         Describe your wine like a sommelier! This site uses machine learning to
         predict the price, points, and variety based on a description.
-      </h2>
+      </p>
     </div>
     <textarea
       v-model="review"
