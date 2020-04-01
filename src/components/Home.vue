@@ -147,6 +147,7 @@ textarea {
   height: 70px;
   border-radius: 12px;
   padding: 10px;
+  font-family: Calibri;
 }
 
 div.intro {
@@ -158,6 +159,7 @@ div.intro {
 button {
   width: 30%;
   padding: 10px;
+  font-family: Calibri;
 }
 
 div.Home {
@@ -174,6 +176,7 @@ div.results {
   background-color: #722f37;
   padding: 10px;
   border-radius: 25px;
+  font-family: Calibri;
 }
 .middle {
   transition: 0.5s ease;
@@ -200,6 +203,9 @@ div.loading {
 }
 button {
   border-radius: 25px;
+  color: white;
+  background-color: #722f37;
+  font-family: Calibri;
 }
 
 .footer {
@@ -210,6 +216,7 @@ button {
   color: white;
   text-align: center;
   box-sizing: border-box;
+  font-family: Calibri;
 }
 
 .ineedspace {
