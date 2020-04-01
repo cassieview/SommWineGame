@@ -9,7 +9,7 @@
     </div>
     <textarea
       v-model="review"
-      placeholder="This fragrant, savory red carries aromas of underbrush, plum, blue flower, cocoa and camphor on the nose. The polished palate boasts juicy Marasca cherry, ripe blackberry, licorice, tobacco and an appealing hint of game. Silky tannins and bright acidity keep it balanced and elegant."
+      placeholder="Pale pink in color.  Fresh watermelon, green apple, juicy peach and jasmine jump out of the glass.  A refreshing mouthfeel accentuates the fruit on the palate – raspberry, ripe pear, and sour candy watermelon. This wine has a long, tangy finish."
     ></textarea>
     <br />
     <br />
@@ -80,6 +80,8 @@
 
 <script>
 import axios from "axios";
+var defaultReview =
+  "Pale pink in color.  Fresh watermelon, green apple, juicy peach and jasmine jump out of the glass.  A refreshing mouthfeel accentuates the fruit on the palate – raspberry, ripe pear, and sour candy watermelon. This wine has a long, tangy finish.";
 const url =
   "https://ai-sommelier.azurewebsites.net/api/wine?code=OMwzdCHjCVPZlHG0oLlUZzZXap4n31YljUFvQtU3w1TvLpLTVQ6nCA==";
 export default {
@@ -97,7 +99,7 @@ export default {
   },
   methods: {
     sendData() {
-      this.input.review = this.review;
+      this.input.review = this.getReview();
       this.response = "";
       this.isLoading = true;
       axios
@@ -121,6 +123,12 @@ export default {
     toWineBottles(value) {
       value = Math.ceil(parseFloat(value) / 0.2);
       return value;
+    },
+    getReview() {
+      if (this.review) {
+        return this.review;
+      }
+      return defaultReview;
     }
   }
 };
