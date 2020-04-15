@@ -89,7 +89,7 @@ import axios from "axios";
 var defaultReview =
   "Pale pink in color.  Fresh watermelon, green apple, juicy peach and jasmine jump out of the glass.  A refreshing mouthfeel accentuates the fruit on the palate – raspberry, ripe pear, and sour candy watermelon. This wine has a long, tangy finish.";
 const url =
-  "https://ai-sommelier.azurewebsites.net/api/wine?code=OMwzdCHjCVPZlHG0oLlUZzZXap4n31YljUFvQtU3w1TvLpLTVQ6nCA==";
+  "https://aiapril.azurewebsites.net/api/wine?code=F1rLX1PJEU9gZawXSid/JkcytpSLqy/50lZiNszjzJ0ao8Ta8tkcSA==";
 export default {
   name: "Home",
   props: {},
