@@ -185,7 +185,7 @@ div.results {
   display: inline-block;
   width: 200px;
   height: 250px;
-  margin: 10px;
+  margin: 5px;
   border: 2px solid white;
   background-color: #722f37;
   padding: 10px;
