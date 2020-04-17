@@ -74,11 +74,15 @@
         <a
           href="https://dev.to/azure/grab-your-wine-it-s-time-to-demystify-ml-and-nlp-47f7"
           target="_blank"
-        >Dev.To Blog</a>
+        >Grab Your Wine it's Time to Demystify ML and NLP</a>
       </p>
-      <p>Read about how the ml models were deployed with onnx on April 17th!</p>
+      <p></p>
+      <a
+        href="https://dev.to/azure/onnx-no-it-s-not-a-pokemon-deploy-your-onnx-model-with-c-and-azure-functions-28f"
+        target="_blank"
+      >Read about how the ml models were deployed with ONNX</a>
       <p>
-        <a href="https://twitter.com/Cassieview" target="_blank">Follow me on twitter!</a>
+        <a href="https://twitter.com/Cassieview" target="_blank">Twitter me @Cassieview</a>
       </p>
     </div>
   </div>
